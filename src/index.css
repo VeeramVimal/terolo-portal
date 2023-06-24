@@ -1,0 +1,10 @@
+/* @import './assets/css/app.css'; */
+
+/* 
+* react js using in type script & Tailwind Css portfolio main css
+* Powered by: @ThalaVR
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
