@@ -9,8 +9,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @import '~antd/dist/antd.css';
-@import '~remixicon/fonts/remixicon.css'; */
+@import '~antd/dist/reset.css';
+@import '~remixicon/fonts/remixicon.css';
 
 /* Custome Style */
 .leading-0 {

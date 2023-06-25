@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-// import { dasboard } from "../";
 import dashbord from "../../assets/Images/dashboard.svg";
 import archivedIcon from "../../assets/Images/archived.svg";
 import layoutIcon from "../../assets/Images/layout.svg";
@@ -376,7 +375,6 @@ export default function SideBar() {
         </div>
       ) : (
         <>
-          {console.log("width===else========", width)}
           {width > 446 ? (
             <div className="w-12 items-center border-r border-gray-200 h-screen bg-white flex flex-col p-5">
               <div
@@ -438,6 +436,5 @@ export default function SideBar() {
         </>
       )}
     </>
-
   );
 }
