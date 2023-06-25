@@ -1,10 +1,11 @@
 import React, { useCallback, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+// import { dasboard } from "../";
 import dashbord from "../../assets/Images/dashboard.svg";
 import archivedIcon from "../../assets/Images/archived.svg";
 import layoutIcon from "../../assets/Images/layout.svg";
 import darkbarIcon from "../../assets/Images/darkbar.svg";
-import images from '../../assets/Images/user.png';
+import images from "../../assets/Images/user.png";
 import performance from "../../assets/Images/performance-chart.svg";
 import business from "../../assets/Images/business.svg";
 import subscription from "../../assets/Images/subscription.svg";
@@ -20,11 +21,10 @@ import logout from "../../assets/Images/logout.svg";
 // import searchIcon from "../../assets/Images/search.svg";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { Tooltip } from "antd";
-import terolo from "../../assets/Images/bm.png"
-import './sidebar.css'
+import terolo from "../../assets/Images/bm.png";
+import "./sidebar.css";
 
 const analyticsMenu = [
-
   {
     id: 1,
     name: "dashboard",
@@ -37,10 +37,8 @@ const analyticsMenu = [
     path: "Performance",
     image: performance,
   },
-
 ];
 const creationsMenu = [
-
   {
     id: 1,
     name: "customers",
@@ -59,11 +57,8 @@ const creationsMenu = [
     path: "orders",
     image: people,
   },
-
-
 ];
 const AdministrationMenu = [
-
   {
     id: 1,
     name: "payments",
@@ -91,7 +86,6 @@ const AdministrationMenu = [
 ];
 
 const SettingMenu = [
-
   {
     id: 1,
     name: "tickets",
@@ -107,7 +101,6 @@ const SettingMenu = [
 ];
 
 const Webapp = [
-
   {
     id: 1,
     name: "web notifications",
@@ -139,8 +132,6 @@ const dropDownList = [
     image: darkbarIcon,
   },
 ];
-
-
 
 export default function SideBar() {
   const { height, width } = useWindowDimensions();
@@ -217,7 +208,6 @@ export default function SideBar() {
         <div className="sidebar_styles sticky ">
           <div className="md:w-72 w-80 border-r overflow-y-auto border-gray-200 h-screen bg-white flex flex-col scroll-style">
             <div className=" p-7 hidden md:block sm:block lg:block  ">
-
               <div className="flex items-center bg-white justify-between">
                 <img src={terolo} alt="Terolo logo" />
                 <div className="flex items-center ">
@@ -230,71 +220,86 @@ export default function SideBar() {
                   </div>
                 </div>
               </div>
-
             </div>
             <div className="py-2 pl-5">
-              <span className="pl-2 text-[12px] font-medium text-[#6E78AC]	hover:text-[#3761EE]">ANALYTICS</span>
-              {analyticsMenu
-                .map((sideMenu, index) => {
-                  return (
-                    <div className={`
-                  ${current_path.includes(sideMenu.path)
-                        ? "  pt-2 border-r-4  border-primary w-25 text-[#3761EE] font-medium landing-3"
-                        : " pt-2 flex  text-[#21304F] landing-3	hover:text-[#3761EE] font-medium"
-                      }`}>
-                      <div className="p-2 flex flex-row items-center text-[12px]">
-                        <img
-                          src={sideMenu.image}
-                          alt={`sideMenu.image ${index}`}
-                        />
-                        <Link className="ml-3 uppercase" to={`/${sideMenu.path}`}>
-                          {sideMenu.name}
-                        </Link>
-                      </div>
+              <span className="pl-2 text-[12px] font-medium text-[#6E78AC]	hover:text-[#3761EE]">
+                ANALYTICS
+              </span>
+              {analyticsMenu.map((sideMenu, index) => {
+                return (
+                  <div
+                    className={`
+                  ${
+                    current_path.includes(sideMenu.path)
+                      ? "  pt-2 border-r-4  border-primary w-25 text-[#3761EE] font-medium landing-3"
+                      : " pt-2 flex  text-[#21304F] landing-3	hover:text-[#3761EE] font-medium"
+                  }`}
+                  >
+                    <div className="p-2 flex flex-row items-center text-[12px]">
+                      <img
+                        src={sideMenu.image}
+                        alt={`sideMenu.image ${index}`}
+                      />
+                      <Link className="ml-3 uppercase" to={`/${sideMenu.path}`}>
+                        {sideMenu.name}
+                      </Link>
                     </div>
-                  );
-                })}
+                  </div>
+                );
+              })}
             </div>
             <div className="pl-5 mt-2">
-              <span className="pl-2 text-[12px]  font-medium text-[#6E78AC] 	hover:text-[#3761EE]">SALES</span>
-              {creationsMenu
-                .map((sideMenu, index) => {
-                  return (
-                    <div className={`
-                  ${current_path.includes(sideMenu.path)
-                        ? " pt-2  border-r-4  border-primary w-25 text-[#3761EE] font-medium	 "
-                        : " pt-2 flex  text-[#21304F]	hover:text-[#3761EE] font-medium"
-                      }`}>
-                      <div className="p-2 flex flex-row items-center text-[12px]">
-                        <img
-                          src={sideMenu.image}
-                          alt={`sideMenu.image ${index}`}
-                        />
-                        <Link className="ml-3 uppercase" to={`/${sideMenu.path}`}>
-                          {sideMenu.name}
-                        </Link>
-                      </div>
+              <span className="pl-2 text-[12px]  font-medium text-[#6E78AC] 	hover:text-[#3761EE]">
+                SALES
+              </span>
+              {creationsMenu.map((sideMenu, index) => {
+                return (
+                  <div
+                    className={`
+                  ${
+                    current_path.includes(sideMenu.path)
+                      ? " pt-2  border-r-4  border-primary w-25 text-[#3761EE] font-medium	 "
+                      : " pt-2 flex  text-[#21304F]	hover:text-[#3761EE] font-medium"
+                  }`}
+                  >
+                    <div className="p-2 flex flex-row items-center text-[12px]">
+                      <img
+                        src={sideMenu.image}
+                        alt={`sideMenu.image ${index}`}
+                      />
+                      <Link className="ml-3 uppercase" to={`/${sideMenu.path}`}>
+                        {sideMenu.name}
+                      </Link>
                     </div>
-                  );
-                })}
+                  </div>
+                );
+              })}
             </div>
             <div className="pl-5 mt-4">
-              <span className="pl-2 text-[12px]  font-medium text-[#6E78AC]	hover:text-[#3761EE]">FINANCE</span>
+              <span className="pl-2 text-[12px]  font-medium text-[#6E78AC]	hover:text-[#3761EE]">
+                FINANCE
+              </span>
               {AdministrationMenu
                 // .slice(0, showLess.showLength)
                 .map((sideMenu, index) => {
                   return (
-                    <div className={`
-                  ${current_path.includes(sideMenu.path)
-                        ? " pt-2  border-r-4  border-primary w-25 text-[#3761EE] font-medium"
-                        : " pt-2 flex text-[#21304F]	hover:text-[#3761EE] font-medium"
-                      }`}>
+                    <div
+                      className={`
+                  ${
+                    current_path.includes(sideMenu.path)
+                      ? " pt-2  border-r-4  border-primary w-25 text-[#3761EE] font-medium"
+                      : " pt-2 flex text-[#21304F]	hover:text-[#3761EE] font-medium"
+                  }`}
+                    >
                       <div className="p-2 flex flex-row items-center text-[12px]">
                         <img
                           src={sideMenu.image}
                           alt={`sideMenu.image ${index}`}
                         />
-                        <Link className="ml-3 uppercase" to={`/${sideMenu.path}`}>
+                        <Link
+                          className="ml-3 uppercase"
+                          to={`/${sideMenu.path}`}
+                        >
                           {sideMenu.name}
                         </Link>
                       </div>
@@ -303,22 +308,30 @@ export default function SideBar() {
                 })}
             </div>
             <div className="pl-5 mt-4">
-              <span className="pl-2 text-[12px]  font-medium text-[#6E78AC]	hover:text-[#3761EE]">HELP DESK</span>
+              <span className="pl-2 text-[12px]  font-medium text-[#6E78AC]	hover:text-[#3761EE]">
+                HELP DESK
+              </span>
               {SettingMenu
                 // .slice(0, showLess.showLength)
                 .map((sideMenu, index) => {
                   return (
-                    <div className={`
-                  ${current_path.includes(sideMenu.path)
-                        ? " pt-4 border-r-4 font-Jakarta border-[#3761EE] w-25 text-[#21304F] font-medium"
-                        : " flex font-Jakarta text-[#21304F]	hover:text-[#3761EE] font-medium"
-                      }`}>
+                    <div
+                      className={`
+                  ${
+                    current_path.includes(sideMenu.path)
+                      ? " pt-4 border-r-4 font-Jakarta border-[#3761EE] w-25 text-[#21304F] font-medium"
+                      : " flex font-Jakarta text-[#21304F]	hover:text-[#3761EE] font-medium"
+                  }`}
+                    >
                       <div className="p-2 flex w-10 h-10 flex-row items-center text-[12px]">
                         <img
                           src={sideMenu.image}
                           alt={`sideMenu.image ${index}`}
                         />
-                        <Link className="ml-3 uppercase" to={`/${sideMenu.path}`}>
+                        <Link
+                          className="ml-3 uppercase"
+                          to={`/${sideMenu.path}`}
+                        >
                           {sideMenu.name}
                         </Link>
                       </div>
@@ -326,24 +339,32 @@ export default function SideBar() {
                   );
                 })}
             </div>
-           
+
             <div className="pl-5 mt-4">
-              <span className="pl-2 text-[12px]  font-medium text-[#6E78AC]	hover:text-[#3761EE]">NOTIFICATIONS</span>
+              <span className="pl-2 text-[12px]  font-medium text-[#6E78AC]	hover:text-[#3761EE]">
+                NOTIFICATIONS
+              </span>
               {Webapp
                 // .slice(0, showLess.showLength)
                 .map((sideMenu, index) => {
                   return (
-                    <div className={`
-                  ${current_path.includes(sideMenu.path)
-                        ? " pt-4 border-r-4 font-Jakarta border-[#3761EE] w-25 text-[#21304F] font-medium"
-                        : " flex font-Jakarta text-[#21304F]	hover:text-[#3761EE] font-medium"
-                      }`}>
+                    <div
+                      className={`
+                  ${
+                    current_path.includes(sideMenu.path)
+                      ? " pt-4 border-r-4 font-Jakarta border-[#3761EE] w-25 text-[#21304F] font-medium"
+                      : " flex font-Jakarta text-[#21304F]	hover:text-[#3761EE] font-medium"
+                  }`}
+                    >
                       <div className="p-2 flex  h-10 flex-row items-center text-[12px]">
                         <img
                           src={sideMenu.image}
                           alt={`sideMenu.image ${index}`}
                         />
-                        <Link className="ml-3 uppercase" to={`/${sideMenu.path}`}>
+                        <Link
+                          className="ml-3 uppercase"
+                          to={`/${sideMenu.path}`}
+                        >
                           {sideMenu.name}
                         </Link>
                       </div>
@@ -355,6 +376,7 @@ export default function SideBar() {
         </div>
       ) : (
         <>
+          {console.log("width===else========", width)}
           {width > 446 ? (
             <div className="w-12 items-center border-r border-gray-200 h-screen bg-white flex flex-col p-5">
               <div
@@ -367,7 +389,7 @@ export default function SideBar() {
               {analyticsMenu.map((item) => {
                 return (
                   <div key={item.id} className="hidden sm:block  p-4 bg-none">
-                    <Tooltip title={`${item.name}`} placement='right'>
+                    <Tooltip title={`${item.name}`} placement="right">
                       <img
                         className="max-w-none "
                         src={item.image}
@@ -380,7 +402,7 @@ export default function SideBar() {
               {creationsMenu.map((item) => {
                 return (
                   <div key={item.id} className="hidden sm:block  p-4 bg-none">
-                    <Tooltip title={`${item.name}`} placement='right'>
+                    <Tooltip title={`${item.name}`} placement="right">
                       <img
                         className="max-w-none "
                         src={item.image}
@@ -393,7 +415,7 @@ export default function SideBar() {
               {AdministrationMenu.map((item) => {
                 return (
                   <div key={item.id} className="hidden sm:block  p-4 bg-none">
-                    <Tooltip title={`${item.name}`} placement='right'>
+                    <Tooltip title={`${item.name}`} placement="right">
                       <img
                         className="max-w-none "
                         src={item.image}
@@ -416,5 +438,6 @@ export default function SideBar() {
         </>
       )}
     </>
+
   );
 }
