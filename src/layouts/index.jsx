@@ -23,6 +23,7 @@ import { useState } from "react";
 // import Mobilenavbar from '../header/MobileNavbar';
 import Header from "./header";
 import Mobilenavbar from "./header/MobileNavbar";
+// import SideBar from "../components/sidebar";
 import SideBar from "./sidebar";
 
 export default function Layout(props) {
